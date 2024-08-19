@@ -1,0 +1,6 @@
+<h1>Angular Stripe and the Payment Element</h1>
+@if (clientSecret && stripe) {
+<ng-container>
+    <app-checkout-form [stripe]="stripe" [clientSecret]="clientSecret"></app-checkout-form>
+</ng-container>
+}

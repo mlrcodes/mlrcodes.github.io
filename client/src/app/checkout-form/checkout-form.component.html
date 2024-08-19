@@ -1,0 +1,9 @@
+<form id="payment-form" (ngSubmit)="handleSubmit($event)">
+    <div id="payment-element"></div>
+    <button [disabled]="isProcessing || !stripe || !elements" id="submit">
+        <span id="button-text">{{ isProcessing ? 'Processing ... ' : 'Pay now' }}</span>
+    </button>
+    @if (message) {
+    <div id="payment-message">{{ message }}</div>
+    }
+</form>

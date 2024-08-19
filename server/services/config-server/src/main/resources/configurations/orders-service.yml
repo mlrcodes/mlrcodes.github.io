@@ -1,0 +1,28 @@
+server:
+  port: 8065
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:33064/orders
+    username: miguel
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.type.mapping: orderConfirmation:com.miguel.raffles.Notifications.OrderNotificationRequest
+
+application:
+  config:
+    customers-url: http://localhost:8090/api/v1/customers
+    tickets-url: http://localhost:8055/api/v1/tickets
+    purchases-url: http://localhost:8095/api/v1/purchases
+    payments-url: http://localhost:8075/api/v1/payments
+

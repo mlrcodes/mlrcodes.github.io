@@ -1,0 +1,6 @@
+server:
+  port: 8095
+
+application:
+  config:
+    tickets-url: http://localhost:8055/api/v1/tickets

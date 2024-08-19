@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/server/services/associations/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/associations/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/config-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/config-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/customers/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/customers/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/discovery/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/discovery/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/notifications/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/notifications/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/orders/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/orders/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/payments/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/payments/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/purchases/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/purchases/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/raffles/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/services/raffles/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

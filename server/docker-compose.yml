@@ -1,0 +1,98 @@
+services:
+
+  customers:
+    image: mysql
+    container_name: customers_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=customers
+      - MYSQL_USER=miguel
+      - MYSQL_PASSWORD=1234
+    ports:
+      - "33061:3306"
+
+  associations:
+    image: mysql
+    container_name: associations_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=associations
+      - MYSQL_USER=miguel
+      - MYSQL_PASSWORD=1234
+    ports:
+      - "33062:3306"
+
+  raffles:
+    image: mysql
+    container_name: raffles_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=raffles
+      - MYSQL_USER=miguel
+      - MYSQL_PASSWORD=1234
+    ports:
+      - "33063:3306"
+
+  orders:
+    image: mysql
+    container_name: orders_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=orders
+      - MYSQL_USER=miguel
+      - MYSQL_PASSWORD=1234
+    ports:
+      - "33064:3306"
+
+  payments:
+    image: mysql
+    container_name: payments_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=payments
+      - MYSQL_USER=miguel
+      - MYSQL_PASSWORD=1234
+    ports:
+      - "33065:3306"
+
+  notifications:
+    image: mysql
+    container_name: notifications_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=notifications
+      - MYSQL_USER=miguel
+      - MYSQL_PASSWORD=1234
+    ports:
+      - "33066:3306"
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_SERVER_ID: 1
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: ms_kafka
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+
+networks:
+  microservices-net:
+
+
+

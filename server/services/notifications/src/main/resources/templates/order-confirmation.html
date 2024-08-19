@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #e2e2e2;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #333;
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+        .content p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+        .table-container {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-container table, .table-container th, .table-container td {
+            border: 1px solid #ddd;
+        }
+        .table-container th, .table-container td {
+            padding: 8px;
+            text-align: left;
+        }
+        .table-container th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Order Confirmation</h1>
+    </div>
+
+    <div class="content">
+        <p>Dear <strong th:text="${customerName}">John Doe</strong>,</p>
+        <p>Thank you for your order! Here are the details of your purchase:</p>
+
+        <p><strong>Order Reference:</strong> <span th:text="${orderReference}">REF123456</span></p>
+        <p><strong>Payment Method:</strong> <span th:text="${paymentMethod}">CREDIT_CARD</span></p>
+    </div>
+
+    <div class="content">
+        <h2>Customer Information</h2>
+        <p><strong>Name:</strong> <span th:text="${customerName}">John Doe</span></p>
+        <p><strong>Email:</strong> <span th:text="${email}">john.doe@example.com</span></p>
+        <p><strong>Phone Number:</strong> <span th:text="${phoneNumber}">123-456-7890</span></p>
+    </div>
+
+    <div class="content table-container">
+        <h2>Order Details</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Ticket Number</th>
+                <th>Raffle ID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="ticket : ${tickets}">
+                <td th:text="${ticket.ticketNumber}">1001</td>
+                <td th:text="${ticket.raffleId}">10</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="content">
+        <p><strong>Total Paid:</strong> <span th:text="${total}">$100.00</span></p>
+    </div>
+
+    <div class="footer">
+        <p>If you have any questions, feel free to contact us at support@example.com.</p>
+        <p>Thank you for shopping with us!</p>
+    </div>
+</div>
+
+</body>
+</html>

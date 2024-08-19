@@ -1,0 +1,72 @@
+Problema detectado: Muchas asociaciones sin ánimo de lucro realizan sorteos para recaudar fondos. Estos sorteos son llevados a cabo de manera manual,
+promocionándose en redes, haciendo los cobros por multitud de medios (bizum, metálico, etc.), y manteniendo un registro manual de todo el proceso. 
+Esto consume demasiado tiempo, es poco eficiente, y puedo inducir a errores. 
+
+Solución: Automatizar el proceso mediante una aplicación web y móvil. La aplicaicón centralizará la compra de tickets por parte de los usuarios, y proporcionará
+un registro automatizado de todo el proceso.
+
+Características de la aplciación: En un primer momento, esta servirá a una única asociación, y no tendrá más que las funcionalidades esenciales para cumplir 
+con el propósito inmediato de la aplicación (creación y administración de un sorteo, venta de tickets, notificaciones de compra venta a los compradores (via email) y a 
+la asociación (Via email y via app), registros de compra venta, y selección del ganador del sorteo)
+
+La aplicación debe ser escalable, ya que en futuas iteraciones deberá servir a varias asociaciones y permitir que estas gestionen varios sorteos simultáneamente. 
+Por tanto, los usuarios deberán tener la capacidad de buscar asociaciones y explorar los diferentes sorteos ofrecidos por cada una de ellas. 
+
+
+
+
+Requerimientos:
+
+ - Aunque en un primer momento sólo exista una asociación, la creación de sorteos 
+
+
+Features:
+
+ - Para asociación:
+  - Creación de sorteo:
+  - Modificación y eliminación de sorteos
+
+ - Features para usuarios:
+  - Los usuarios no necesitan estar registrados
+  - Ver sorteos de una asociación (página de asociación)
+  - Acceder a un sorteo en particular (página de sorteo)
+  - Comprar cantidad de boletos elegida:
+   - Introducir datos personales
+   - Pago con tarjeta de crédito o paypal (pasarela de pago)
+  - Envío de boleto por correo
+
+
+Microservices:
+ - Config server
+ - Discovery server
+ - Gateway
+ - Authentication
+ - Associations management
+ - Customers
+ - Raffles
+ - Payment
+ - Notifications
+
+Entities:
+ - Association
+  - Address
+ - Raffle
+ - Ticket
+ - Order
+ - Payment
+ - Notification
+ - Customer
+
+
+
+
+Proceso de compra:
+ - Recibo orden de compra (la orden de compra incluye id del ticket y su número).
+
+
+
+
+
+
+
+
